@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellar Central</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/3733f30700.js" crossorigin="anonymous"></script>
+    <style>
+      
+       .container {
+    width: 100vw; /* Full width of the viewport */
+    height: 550px; /* Fixed height of 550 pixels */
+    max-width: 100%; /* Ensures the container doesn't exceed the viewport width */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+}
+      .default-font {
+        font-family: 'Red Hat Display', sans-serif;
+        color: #9d152d;
+    }
+
+      .cat_container
+      {
+        grid-template-columns: 1fr(4);
+      }
+
+
+        .h-550 {
+                 height: 550px;
+            }
+
+
+            .text {
+    font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: #9d152d;
+  font-style: normal;
+  font-size: 18px;
+}
+.text-title {
+    font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: #c21333;
+  font-style: normal;
+  font-size: 18px;
+  text-align: center;
+
+}
+
+
+.text-small {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  margin-top: -10px;
+  color: #9d152d;
+  font-style: normal;
+  font-size: 14px;
+  text-align: center;
+
+}
+.text-price {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  color: #490e19;
+  font-size: 20px;
+  margin-top: -10px;
+  text-align: center;
+}
+.btn {
+    height: 40px;
+    width: 210px;
+    border: none;
+    border-radius: 20px;
+    background-color: #e63c5b;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-family: "Red Hat Display", sans-serif;
+}
+
+.btn:hover {
+    background-color: #9d152d;
+}
+.card {
+    height: 130px;
+    overflow: hidden;
+    border: 3;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-color: #9d152d;
+    font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  color: #9d152d;
+  font-style: normal;
+  font-size: 24px;
+}
+    </style>
+    
+</head>
+<body>
+<header class="sticky top-0 z-50 bg-slate-300 text-rose-950">
+       <div class="overflow-y-hidden">
+          <!-- navbar -->
+      <nav class="flex justify-between bg-slate-300 text-rose-950">
+        <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+          <a class="text-3xl font-extrabold font-heading" href="#">
+            <img class="h-9" src="img/cclogo.png" alt="logo">
+        </a>
+          <!-- Nav Links -->
+          <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+            <li><a class="text-rose-700 hover:text-rose-950 text-decoration-none" href="index.html">Home</a></li>
+            <li><a class="text-rose-700 hover:text-rose-950 text-decoration-none" href="#collections">Collections</a></li>
+            <li><a class="text-rose-700 hover:text-rose-950 text-decoration-none" href="#featured-drinks">Featured Drinks</a></li>
+            <li><a class="text-rose-700 hover:text-rose-950 text-decoration-none" href="#bestsellers">Bestsellers</a></li>
+            <li><a class="text-rose-700 hover:text-rose-950 text-decoration-none" href="#contact-us">Contact Us</a></li>
+          </ul>
+          <!-- Header Icons -->
+          <div class="hidden xl:flex space-x-5 items-center">
+            <a class="text-rose-700 hover:text-rose-950" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </a>
+            <a class="text-rose-700 hover:text-rose-950" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              <span class="flex absolute -mt-5 ml-4">
+                <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+                  </span>
+                </span>
+            </a>
+            <!-- Sign In / Register      -->
+            <a class="text-rose-700 hover:text-rose-950" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </a>
+            
+          </div>
+        </div>
+        <!-- Responsive navbar -->
+        <a class="xl:hidden flex mr-6 items-center" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-700 hover:text-rose-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span class="flex absolute -mt-5 ml-4">
+            <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
+            </span>
+          </span>
+        </a>
+        <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-700 hover:text-rose-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </a>
+      </nav>
+       </div>
+</header>
+    <main>
+            <!-- Section: Details -->
+            <section id="carousel" class="mb-8">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/Dewars-GWP-Banner-1140x380.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/MH-Celler-Central--4100x1367-1140x380.png" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/Bombay-Sapphire-Promo-Banner-1140x380.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </section>
+            <!-- Section: Details -->
+            
+           
+          
+            <div id="collections" class="d-flex justify-content-center align-items-center mt-5"> <button class="btn btn-dark">DRINK COLLECTIONS</button> </div>
+            <div class="d-flex justify-content-center mt-3"> <span class="text text-center">Finding Best Wines & Spirits Now<br> At Your Fingertips</span> </div>
+            <div class="row mt-2 mb-3 g-4 mx-5">
+                <div class="col-md-3">
+                    <div class="card p-1">
+                        <div class="d-flex justify-content-between align-items-center p-2">
+                            <div class="flex-column lh-1 imagename"> <span class="cat_name">Wines</span> </div>
+                            <div> <img src="img/x12436_robertson_winery_chapel_natural_sweet_red.jpg.pagespeed.ic.fN5aIEfPTj-450x450.jpg" alt="1" height="100" width="100" /> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-2">
+                        <div class="d-flex justify-content-between align-items-center p-2">
+                            <div class="flex-column lh-1 imagename"> <span>Tequilas</span> </div>
+                            <div> <img src="img/VOLCAN-PROMO-2-450x450.jpg" alt="2" height="100" width="100" /> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-2">
+                        <div class="d-flex justify-content-between align-items-center p-2">
+                            <div class="flex-column lh-1 imagename"> <span>Champagnes</span> </div>
+                            <div> <img src="img/Veuve-Clicquot-Yellow-Label-450x450.jpg" height="100" alt="3" width="100" /> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-2">
+                        <div class="d-flex justify-content-between align-items-center p-2">
+                            <div class="flex-column lh-1 imagename"> <span>Cognacs</span> </div>
+                            <div> <img src="img/Hennessy-VSOP-450x450.png" alt="5" height="100" width="100" /> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="featured-drinks" class="text-center mt-5">
+              <h2 class="text-2xl md:text-3xl font-bold text-rose-800 default-font mt-2 animate-bounce">Featured Drinks</h2>
+          </div>
+          
+            <div class="mx-auto px-4 mb-0">
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+                
+                  <!-- Product Card 1 -->
+                  <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                      <img src="img/beluga noble-450x450.png" alt="Hennessy" class="w-full h-64 object-cover object-center">
+                      <div class="p-4">
+                          <h3 class="text-title font-semibold">Beluga Noble</h3>
+                          <p class="text-price">₦134,350.00</p>
+                          <div class="text-center"> <!-- Center the button -->
+                            <button class="btn flex text-white rounded-md">Add to Cart</button>
+                        </div>
+                        </div>
+                  </div>
+          
+                  <!-- Product Card 2 -->
+                  <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                      <img src="img/RWchapelWhtNV11-450x450.jpg" alt="Tequila" class="w-full h-64 object-cover object-center">
+                      <div class="p-4">
+                          <h3 class="text-title font-semibold text-gray-800">RW Chapel (White)</h3>
+                          <p class="text-price">₦40,000.00</p>
+                          <div class="text-center"> <!-- Center the button -->
+                            <button class="btn flex text-white rounded-md">Add to Cart</button>
+                        </div>                      </div>
+                  </div>
+          <!-- Product Card 3 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md">
+  <img src="img/billecart-demisec-450x450.png" alt="Tequila" class="w-full h-64 object-cover object-center">
+  <div class="p-4">
+      <h3 class="text-title font-semibold text-gray-800">Billecart Demisac</h3>
+      <p class="text-price">₦34,500.00</p>
+      <div class="text-center"> <!-- Center the button -->
+          <button class="btn flex text-white rounded-md">Add to Cart</button>
+      </div>
+  </div>
+</div>
+
+
+                 <!-- Product Card 2 -->
+                 <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                  <img src="img/gin-mare-450x450.jpg" alt="Tequila" class="w-full h-64 object-cover object-center">
+                  <div class="p-4">
+                      <h3 class="text-title font-semibold text-gray-800">Gin Mare</h3>
+                      <p class="text-price">₦33,000.00</p>
+                      <div class="text-center"> <!-- Center the button -->
+                        <button class="btn flex text-white rounded-md">Add to Cart</button>
+                    </div>                  </div>
+              </div>
+              </div>
+          </div>
+          <div class="mx-5 gap-3 grid grid-cols-1 lg:grid-cols-2 justify-center mt-0">
+            <div class="w-full mt-3 h-full rounded-lg overflow-hidden">
+                <img src="img/banner2.jpg" alt="banner2" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full mt-3 h-full rounded-lg overflow-hidden">
+                <img src="img/banner1.jpg" alt="banner1" class="w-full h-full object-cover">
+            </div>
+        </div>
+        
+
+            <div id="bestsellers" class="text-center mt-5">
+              <h2 class="text-2xl md:text-3xl font-bold text-rose-800 default-font mt-2 animate-bounce">Bestsellers</h2>
+          </div>
+          
+            <div class="mx-auto px-4 mb-0">
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+                
+                  <!-- Product Card 1 -->
+                  <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                      <img src="img/Large_3000_PNG-FY21_BACARDI_Carta_Blanca_IPX_750ml_40--450x450.png" alt="Hennessy" class="w-full h-64 object-cover object-center">
+                      <div class="p-4">
+                          <h3 class="text-title font-semibold">Bacardi C.Blanca</h3>
+                          <p class="text-price">₦134,350.00</p>
+                          <div class="text-center"> <!-- Center the button -->
+                            <button class="btn flex text-white rounded-md">Add to Cart</button>
+                        </div>                      </div>
+                  </div>
+          
+                  <!-- Product Card 2 -->
+                  <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                      <img src="img/Martini-Rose-Bottle-Shot-450x450.gif" alt="Tequila" class="w-full h-64 object-cover object-center">
+                      <div class="p-4">
+                          <h3 class="text-title font-semibold text-gray-800">Martini Rose</h3>
+                          <p class="text-price">₦67,500.00</p>
+                          <div class="text-center"> <!-- Center the button -->
+                            <button class="btn flex text-white rounded-md">Add to Cart</button>
+                        </div>                      </div>
+                  </div>
+          
+                   <!-- Product Card 3 -->
+                   <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="img/Hennessy-VSOP-450x450.png" alt="Tequila" class="w-full h-64 object-cover object-center">
+                    <div class="p-4">
+                        <h3 class="text-title font-semibold text-gray-800">Hennessy Hip Hop</h3>
+                        <p class="text-price">₦34,500.00</p>
+                        <div class="text-center"> <!-- Center the button -->
+                          <button class="btn flex text-white rounded-md">Add to Cart</button>
+                      </div>                    </div>
+                </div>
+
+                 <!-- Product Card 2 -->
+                 <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                  <img src="img/glenfiddich-12-years-450x450.jpg" alt="Tequila" class="w-full h-64 object-cover object-center">
+                  <div class="p-4">
+                      <h3 class="text-title font-semibold text-gray-800">Glenfidditch</h3>
+                      <p class="text-price">₦45,600.00</p>
+                      <div class="text-center"> <!-- Center the button -->
+                        <button class="btn flex text-white rounded-md">Add to Cart</button>
+                    </div>                  </div>
+              </div>
+              </div>
+          </div>
+          
+
+
+    </main>
+    
+    <footer class="bg-white" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto max-w-7xl pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <!-- About CellarCentral -->
+          <div class="space-y-8">
+            <img class="h-20" src="img/cclogo.png" alt="Cellar Central Logo">
+            <p class="default-font leading-6 text-gray-600">At Cellar Central, our mission is to provide logistics solutions that deliver the best shopping experience one customer at a time. We are the leading retail distributor of premium wines and spirits in Nigeria. Our order channels include phone, email, social media, and website. We deliver directly to customers’ doorstep and our reach covers major Nigerian cities including Lagos, Port Harcourt, Onitsha, Aba, Abuja, and Benin.</p>
+            <p class="default-font leading-6 text-gray-600"><b>Store Location:</b><br>45 Rasaq Balogun Street, Surulere, Lagos<br>Phone: 0807 806 1111, 0906 415 6296<br>Email: info@cellarcentral.ng</p>
+            <p class="default-font leading-6 text-gray-600"><b>Opening Times:</b><br>Mondays to Fridays 8 AM - 5 PM<br>Saturdays 9 AM - 1 PM</p>
+          </div>
+          <!-- Quick Links -->
+          <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-xl default-font font-semibold leading-6 text-gray-900">Information</h3>
+                <ul role="list" class="mt-6 space-y-2">
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Blog Home</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">About Us</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Delivery Information</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Privacy Policy</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Terms & Conditions</a></li>
+                </ul>
+              </div>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-xl default-font font-semibold leading-6">Customer Service</h3>
+                <ul role="list" class="mt-6 space-y-2">
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Contact Us</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Returns</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Site Map</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-xl default-font font-semibold leading-6">Extras</h3>
+                <ul role="list" class="mx-0 mt-6 space-y-2">
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Brands</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Cellar Central Rewards</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Gift Vouchers</a></li>
+                  <li><a href="#" class="default-font leading-6 text-decoration-none">Frequently Asked Questions</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+          <p class="text-sm default-font leading-5 text-gray-500">&copy; 2024 Cellar Central. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    
+    
+    
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+<script
+type="text/javascript"
+src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="src/js/index.js"></script>
+</body>
+</html>
